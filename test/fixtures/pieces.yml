@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  style: MyString
+  subject: MyString
+  medium: MyString
+  size: MyString
+  price: 9.99
+  artist_id: 
+  exhibition_id: 
+
+two:
+  title: MyString
+  style: MyString
+  subject: MyString
+  medium: MyString
+  size: MyString
+  price: 9.99
+  artist_id: 
+  exhibition_id: 
