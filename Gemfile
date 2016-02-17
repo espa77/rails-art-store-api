@@ -1,15 +1,17 @@
 source 'https://rubygems.org'
 
 
-gem 'rails', '>= 5.0.0.beta2', '< 5.1'
-
+gem 'rails', '4.2.5.1'
+gem 'sprockets-rails', github: "rails/sprockets-rails"
+gem 'arel'
+gem 'rack-cors', :require => 'rack/cors'
 gem 'rails-api'
 
 gem 'spring', :group => :development
 
-
-gem 'sqlite3'
-
+gem 'pg'
+gem 'pry-rails'
+gem 'active_model_serializers', '~> 0.10.0.rc2'
 
 
 # To use ActiveModel has_secure_password
