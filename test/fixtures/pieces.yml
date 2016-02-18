@@ -7,7 +7,7 @@ one:
   medium: MyString
   size: MyString
   price: 9.99
-  artist_id: 
+  artist_id:
   exhibition_id: 
 
 two:
@@ -17,5 +17,5 @@ two:
   medium: MyString
   size: MyString
   price: 9.99
-  artist_id: 
-  exhibition_id: 
+  artist_id:
+  exhibition_id:
