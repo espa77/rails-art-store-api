@@ -54,6 +54,6 @@ class ExhibitionsController < ApplicationController
     end
 
     def exhibition_params
-      params.require(:exhibition).permit(:location, :date)
+      params.require(:exhibition).permit(:location)
     end
 end
