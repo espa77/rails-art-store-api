@@ -1,4 +1,4 @@
 class Piece < ActiveRecord::Base
   belongs_to :artist
-  has_many :exhibitions
+  belongs_to :exhibition
 end
