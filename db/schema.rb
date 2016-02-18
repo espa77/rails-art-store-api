@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160218195203) do
+ActiveRecord::Schema.define(version: 20160218230607) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,18 +20,14 @@ ActiveRecord::Schema.define(version: 20160218195203) do
     t.string   "name"
     t.string   "location"
     t.text     "bio"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.integer  "piece_id"
-    t.integer  "exhibition_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "exhibitions", force: :cascade do |t|
     t.string   "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "piece_id"
-    t.integer  "artist_id"
   end
 
   create_table "pieces", force: :cascade do |t|
@@ -41,15 +37,10 @@ ActiveRecord::Schema.define(version: 20160218195203) do
     t.string   "medium"
     t.string   "size"
     t.decimal  "price",         precision: 5, scale: 2
-    t.integer  "artist_id"
-    t.integer  "exhibition_id"
     t.datetime "created_at",                            null: false
     t.datetime "updated_at",                            null: false
+    t.integer  "artist_id"
+    t.integer  "exhibition_id"
   end
 
-  add_index "pieces", ["artist_id"], name: "index_pieces_on_artist_id", using: :btree
-  add_index "pieces", ["exhibition_id"], name: "index_pieces_on_exhibition_id", using: :btree
-
-  add_foreign_key "pieces", "artists"
-  add_foreign_key "pieces", "exhibitions"
 end
