@@ -1,5 +1,5 @@
 class PieceSerializer < ActiveModel::Serializer
   attributes :id, :title, :style, :subject, :medium, :size, :price
-  has_one :artist
-  has_one :exhibition
+  belongs_to :artist
+  has_many :exhibitions
 end

@@ -2,8 +2,7 @@
 
 one:
   location: MyString
-  date: MyString
+
 
 two:
   location: MyString
-  date: MyString
