@@ -5,7 +5,6 @@ class PiecesController < ApplicationController
   # GET /pieces.json
   def index
     @pieces = Piece.all
-
     render json: @pieces
   end
 
