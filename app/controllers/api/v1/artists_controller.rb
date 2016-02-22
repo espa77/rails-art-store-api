@@ -30,7 +30,7 @@ class Api::V1::ArtistsController < ApplicationController
   end
 
   private
-  
+
     def artist_params
       params.require(:artist).permit(:name, :location, :bio)
     end
