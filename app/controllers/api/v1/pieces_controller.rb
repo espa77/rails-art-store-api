@@ -50,6 +50,6 @@ class Api::V1::PiecesController < ApplicationController
     end
 
     def piece_params
-      params.require(:piece).permit(:title, :style, :subject, :medium, :size, :price)
+      params.require(:piece).permit(:title, :style, :subject, :medium, :size, :price, :asset)
     end
 end

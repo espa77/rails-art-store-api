@@ -1,6 +1,4 @@
 piece1 = Piece.create(title: "Writing Code with Carrots", style: "documentary", subject: "coding", medium: "polaroid", size: "20 x 20" , price: 9.99)
-piece1.exhibitions << exhibition1
-piece1.save
 piece2 = Piece.create(title: "Clown Juice", style: "classic", subject: "substance abuse", medium: "canvas", size: "24 x 42" , price: 25.00)
 piece3 = Piece.create(title: "Bingo", style: "figurative", subject: "pets", medium: "pottery", size: "608 x 2015" , price: 90.00)
 piece4 = Piece.create(title: "Watching Television with Beer", style: "Fine Art", subject: "nude", medium: "C-type", size: "2 x 2" , price: 80.00)
