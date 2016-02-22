@@ -1,12 +1,10 @@
-class ExhibitionsController < ApplicationController
+class Api::V1::ExhibitionsController < ApplicationController
   before_action :set_exhibition, only: [:show, :update, :destroy]
 
   # GET /exhibitions
   # GET /exhibitions.json
   def index
-    @exhibitions = Exhibition.all
-
-    render json: @exhibitions
+    render json: Exhibition.all
   end
 
   # GET /exhibitions/1
@@ -42,9 +40,7 @@ class ExhibitionsController < ApplicationController
   # DELETE /exhibitions/1
   # DELETE /exhibitions/1.json
   def destroy
-    @exhibition.destroy
-
-    head :no_content
+    render json: @exhibition.destroy
   end
 
   private
