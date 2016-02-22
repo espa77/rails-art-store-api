@@ -1,11 +1,10 @@
-class PiecesController < ApplicationController
+class Api::V1::PiecesController < ApplicationController
   before_action :set_piece, only: [:show, :update, :destroy]
 
   # GET /pieces
   # GET /pieces.json
   def index
-    @pieces = Piece.all
-    render json: @pieces
+    render json: Piece.all
   end
 
   # GET /pieces/1
@@ -41,9 +40,7 @@ class PiecesController < ApplicationController
   # DELETE /pieces/1
   # DELETE /pieces/1.json
   def destroy
-    @piece.destroy
-
-    head :no_content
+    render json: @piece.destroy
   end
 
   private
