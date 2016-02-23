@@ -13,15 +13,23 @@ class Api::V1::ArtistsController < ApplicationController
   end
 
   def create
-    artist = Artist.create(artist_params)
-    render json: artist
+    @artist = Artist.new(artist_params)
+    if @artist.save
+      render json: @artist
+    else
+      render json: @artist.errors, status: :unprocessable_entity
+    end
   end
 
   def update
-    artist = Artist.find(params[:id])
-    artist.update(artist_params)
-    render json: artist
+    @artist = Artist.find(params[:id])
+    if @artist.update(artist_params)
+      head :no_content
+    else
+      render json: @artist.errors, status: :unprocessable_entity
+    end
   end
+
 
   def destroy
     artist = Artist.find(params[:id])

@@ -16,12 +16,9 @@ class Api::V1::PiecesController < ApplicationController
   # POST /pieces
   # POST /pieces.json
   def create
-
     @piece = Piece.new(piece_params)
-
     if @piece.save
       render json: @piece
-      # , status: :created, location: @piece
     else
       render json: @piece.errors, status: :unprocessable_entity
     end
@@ -30,9 +27,7 @@ class Api::V1::PiecesController < ApplicationController
   # PATCH/PUT /pieces/1
   # PATCH/PUT /pieces/1.json
   def update
-
     @piece = Piece.find(params[:id])
-
     if @piece.update(piece_params)
       head :no_content
     else
