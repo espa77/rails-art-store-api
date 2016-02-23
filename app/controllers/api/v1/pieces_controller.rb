@@ -16,7 +16,7 @@ class Api::V1::PiecesController < ApplicationController
   # POST /pieces
   # POST /pieces.json
   def create
-  
+
     @piece = Piece.new(piece_params)
 
     if @piece.save
@@ -53,6 +53,6 @@ class Api::V1::PiecesController < ApplicationController
     end
 
     def piece_params
-      params.require(:piece).permit(:title, :style, :subject, :medium, :size, :price, :artist_id)
+      params.require(:piece).permit(:title, :style, :subject, :medium, :size, :price, :artist_id, :asset)
     end
 end

@@ -50,6 +50,6 @@ class Api::V1::ExhibitionsController < ApplicationController
     end
 
     def exhibition_params
-      params.require(:exhibition).permit(:location)
+      params.require(:exhibition).permit(:location, :title)
     end
 end
