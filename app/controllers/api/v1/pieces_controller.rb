@@ -1,11 +1,10 @@
-class PiecesController < ApplicationController
+class Api::V1::PiecesController < ApplicationController
   before_action :set_piece, only: [:show, :update, :destroy]
 
   # GET /pieces
   # GET /pieces.json
   def index
-    @pieces = Piece.all
-    render json: @pieces
+    render json: Piece.all
   end
 
   # GET /pieces/1
@@ -17,10 +16,12 @@ class PiecesController < ApplicationController
   # POST /pieces
   # POST /pieces.json
   def create
+  
     @piece = Piece.new(piece_params)
 
     if @piece.save
-      render json: @piece, status: :created, location: @piece
+      render json: @piece
+      # , status: :created, location: @piece
     else
       render json: @piece.errors, status: :unprocessable_entity
     end
@@ -29,6 +30,7 @@ class PiecesController < ApplicationController
   # PATCH/PUT /pieces/1
   # PATCH/PUT /pieces/1.json
   def update
+
     @piece = Piece.find(params[:id])
 
     if @piece.update(piece_params)
@@ -41,9 +43,7 @@ class PiecesController < ApplicationController
   # DELETE /pieces/1
   # DELETE /pieces/1.json
   def destroy
-    @piece.destroy
-
-    head :no_content
+    render json: @piece.destroy
   end
 
   private
@@ -53,6 +53,6 @@ class PiecesController < ApplicationController
     end
 
     def piece_params
-      params.require(:piece).permit(:title, :style, :subject, :medium, :size, :price)
+      params.require(:piece).permit(:title, :style, :subject, :medium, :size, :price, :artist_id)
     end
 end
