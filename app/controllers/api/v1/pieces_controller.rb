@@ -10,6 +10,7 @@ class Api::V1::PiecesController < ApplicationController
 
   def create
     @piece = Piece.new(piece_params)
+    @piece.save
     render json: @piece
   end
 
@@ -26,6 +27,6 @@ class Api::V1::PiecesController < ApplicationController
 
   private
     def piece_params
-      params.require(:piece).permit(:title, :style, :subject, :medium, :size, :price, :artist_id, :asset)
+      params.require(:piece).permit(:title, :style, :subject, :medium, :size, :price, :artist_id, :asset, :exhibition_id)
     end
 end

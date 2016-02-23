@@ -11,6 +11,7 @@ class Api::V1::ExhibitionsController < ApplicationController
 
   def create
     @exhibition = Exhibition.new(exhibition_params)
+    @exhibition.save
     render json: @exhibition
   end
 
