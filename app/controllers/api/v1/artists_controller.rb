@@ -9,6 +9,7 @@ class Api::V1::ArtistsController < ApplicationController
   end
 
   def create
+
     @artist = Artist.create(artist_params)
     render json: @artist
   end
@@ -18,6 +19,7 @@ class Api::V1::ArtistsController < ApplicationController
     @artist.update(artist_params)
     render json: @artist
   end
+
 
   def destroy
     @artist = Artist.find(params[:id])
