@@ -16,6 +16,9 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'carrierwave-aws'
 gem 'figaro'
+gem 'unf'
+gem 'carrierwave-base64'
+gem 'fog'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
