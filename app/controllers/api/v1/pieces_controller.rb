@@ -9,10 +9,13 @@ class Api::V1::PiecesController < ApplicationController
   end
 
   def create
-    @piece = Piece.new(piece_params)
-    @piece.save
-    render json: @piece
-  end
+    @piece = Piece.create(piece_params)
+     uploader = AssetUploader.new(@piece, :piece)
+     uploader.store!(params[:piece][:asset])
+     @piece.asset = uploader.file
+     @piece.save!
+     render json: @piece
+   end
 
   def update
     @piece = Piece.find(params[:id])

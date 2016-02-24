@@ -3,7 +3,7 @@ class AssetUploader < CarrierWave::Uploader::Base
  # include CarrierWave::RMagick
  include CarrierWave::MiniMagick
  # Choose what kind of storage to use for this uploader:
- storage :file
+ storage :aws
  # storage :fog
  def store_dir
    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
@@ -70,7 +70,7 @@ class AssetUploader < CarrierWave::Uploader::Base
  #   process :resize_to_limit => [800, 800]
  # end
  #
- # def extension_white_list
- #   %w(jpg jpeg gif png)
- # end
+ def extension_white_list
+    %w(jpg jpeg gif png)
+  end
 end
