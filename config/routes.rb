@@ -5,6 +5,8 @@ Rails.application.routes.draw do
       resources :exhibitions, except: [:new, :edit]
       resources :artists, except: [:new, :edit]
       resources :pieces, except: [:new, :edit]
+      get "users/me", to: "users#me"
+      resources :users, except: [:new, :edit]
     end
   end
 end

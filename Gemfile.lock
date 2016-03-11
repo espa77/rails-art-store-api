@@ -55,6 +55,7 @@ GEM
       jmespath (~> 1.0)
     aws-sdk-resources (2.2.19)
       aws-sdk-core (= 2.2.19)
+    bcrypt (3.1.10)
     builder (3.2.2)
     carrierwave (0.10.0)
       activemodel (>= 3.2.0)
@@ -267,6 +268,7 @@ PLATFORMS
 DEPENDENCIES
   active_model_serializers
   arel
+  bcrypt (~> 3.1.7)
   carrierwave
   carrierwave-aws
   carrierwave-base64
